@@ -1,9 +1,8 @@
 let myInputs = document.getElementsByClassName("input-field");
 
 //####### Regexesssssss
-const nameRegex = /^[a-z ,.'-]+$/i
+const emptyInput = /^$/
 const mailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
 const backgroundImage = "url(images/icon-error.svg)";
 const borderStyle = "1px solid red";
 
@@ -12,7 +11,7 @@ const borderStyle = "1px solid red";
 const validateInput = (input) => {
     switch (input.id) {
         case "firstName":
-            if (!(nameRegex.test(input.value))) {
+            if (!(emptyInput.test(input.value))) {
                 document.head.appendChild(returnCssRule(input));
                 input.value = null;
             } else {
@@ -20,7 +19,7 @@ const validateInput = (input) => {
             }
             break;
         case "lastName":
-            if (!(nameRegex.test(input.value))) {
+            if (!(emptyInput.test(input.value))) {
                 document.head.appendChild(returnCssRule(input));
                 input.value = null;
             } else {
@@ -36,7 +35,7 @@ const validateInput = (input) => {
             }
             break;
         case "password":
-            if (!(passwordRegex.test(input.value))) {
+            if (!(emptyInput.test(input.value))) {
                 document.head.appendChild(returnCssRule(input));
                 input.value = null;
             } else {
