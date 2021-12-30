@@ -13,7 +13,7 @@ const validateInput = (input) => {
     switch (input.id) {
         case "firstName":
             if (!(nameRegex.test(input.value))) {
-                document.head.appendChild(returnCssRule(input.id));
+                document.head.appendChild(returnCssRule(input));
                 input.value = null;
             } else {
                 console.log("Richtiger Name");
@@ -21,7 +21,7 @@ const validateInput = (input) => {
             break;
         case "lastName":
             if (!(nameRegex.test(input.value))) {
-                document.head.appendChild(returnCssRule(input.id));
+                document.head.appendChild(returnCssRule(input));
                 input.value = null;
             } else {
                 console.log("richtiger nachname");
@@ -29,7 +29,7 @@ const validateInput = (input) => {
             break;
         case "emailAddress":
             if (!(mailRegex.test(input.value))) {
-                document.head.appendChild(returnCssRule(input.id));
+                document.head.appendChild(returnCssRule(input));
                 input.value = null;
             } else {
                 console.log("richtige email");
@@ -37,7 +37,7 @@ const validateInput = (input) => {
             break;
         case "password":
             if (!(passwordRegex.test(input.value))) {
-                document.head.appendChild(returnCssRule(input.id));
+                document.head.appendChild(returnCssRule(input));
                 input.value = null;
             } else {
                 console.log("Richtiges passwort")
@@ -55,8 +55,8 @@ const checkInputs = () => {
 
 
 ///####### helper method that returns CSS for every input indivdually 
-const returnCssRule = (id) => {
-    const falsyInputCssRule = `#${id} {
+const returnCssRule = (input) => {
+    const falsyInputCssRule = `#${input.id} {
         background: url(images/icon-error.svg);
         background-repeat: no-repeat;
         background-size: 20px;
@@ -64,9 +64,9 @@ const returnCssRule = (id) => {
         border: 1px solid red;
     }
     
-    .${id}::after {
+    .${input.id}::after {
         font-size: 10px;
-        content: "Looks like here's soemthing wrong";
+        content: "${input.id === "emailAddress" ? "Looks like this is not an email" : input.getAttribute("placeholder") + " cannot be empty"}";
         color: red;
         text-align: right;
         margin-top: 0.5em;
