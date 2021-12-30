@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+
+  <script src="index.js" async></script>
+
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="text">
+    <h1>Learn to code by watching others</h1>
+    <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+      but understanding how developers think is invaluable. </p>
+  </div>
+  <div class="my-wrapper">
+    <a class="free-trial-button" href="">
+      <p><b>Try it free 7 days</b> then $20/mo. thereafter</p>
+    </a>
+    <div class="form-div">
+      <form class="registration-form" action="">
+        <label class="firstName" for="">
+          <input id="firstName" class="input-field icon" type="text" placeholder="First Name">
+        </label>
+        <label class="lastName" for="">
+          <input id="lastName" class="input-field icon" type="text" placeholder="Last Name">
+        </label>
+        <label class="emailAddress" for="">
+          <input id="emailAddress" class="input-field icon" type="text" placeholder="Email address">
+        </label>
+        <label class="password" for="">
+          <input id="password" class="input-field icon" type="password" placeholder="Password">
+        </label>
+      </form>
+      <a class="claim-trial-button" href="javascript:void(0);" onclick="checkInputs()">CLAIM YOUR FREE TRIAL</a>
+      <p class="disclaimer">By clicking the button, you are agreeing to our <a class="terms" href="">Terms and Services</a></p>
+    </div>
+  </div>
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Karsten Zowada</a>.
+    </p>
+  </footer>
+</body>
+</html>
